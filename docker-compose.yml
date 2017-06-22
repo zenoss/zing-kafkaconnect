@@ -1,7 +1,7 @@
 version: "3"
 services:
   kfk-conn:
-    image: zenoss/zing-kafkaconnect:dev
+    image: ${CI_IMAGE:-zenoss/zing-kafkaconnect:dev}
     build: .
     environment:
       CONNECT_BOOTSTRAP_SERVERS: kfk:9092
