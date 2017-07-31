@@ -20,7 +20,7 @@ build: export COMMIT_SHA ?= $(shell git rev-parse HEAD)
 build: export GIT_BRANCH ?= $(shell git symbolic-ref HEAD | sed -e "s/^refs\/heads\///")
 build: export PULL_REQUEST = ${ghprbPullLink}
 build: $(DOCKER_COMPOSE)
-	@$(DOCKER_COMPOSE_BASE) build kafkaconnect
+	@$(DOCKER_COMPOSE_BASE) build kfk-conn
 
 .PHONY: run
 run: $(DOCKER_COMPOSE)
