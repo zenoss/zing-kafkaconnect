@@ -7,4 +7,4 @@ RUN curl -sk -SL https://github.com/datamountaineer/stream-reactor/releases/down
 
 ARG DATABUS_METRIC_CATALOG_SINK_VERSION=0.1.2
 RUN curl -sk -SL  http://zenpip.zenoss.eng/packages/databus-metric-catalog-sink-${DATABUS_METRIC_CATALOG_SINK_VERSION}-zapp.tar.gz \
-    | tar -xzf - -C /usr/share/java/kafka lib/databus-metric-catalog-sink/databus-metric-catalog-sink-${DATABUS_METRIC_CATALOG_SINK_VERSION}.jar
+    | tar --strip-components=2 -xzf - -C /usr/share/java/kafka lib/databus-metric-catalog-sink/databus-metric-catalog-sink-${DATABUS_METRIC_CATALOG_SINK_VERSION}.jar
